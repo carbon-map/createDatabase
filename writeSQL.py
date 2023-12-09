@@ -3,15 +3,19 @@ import pymysql
 import os
 from dotenv import load_dotenv
 
+# 載入 .env 
+load_dotenv()
+
 # 資料庫設定
 db_settings = {
     "host": os.getenv('host'),
-    "port": os.getenv('port'),
+    "port": int(os.getenv('port')),
     "user": os.getenv('user'),
     "password": os.getenv('password'),
     "db": os.getenv('db'),
     "charset": "utf8"
 }
+
 
 try:
     # 建立Connection物件
